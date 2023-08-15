@@ -1,7 +1,8 @@
-import PropTypes from "prop-types";
+import usePostContext from "../../hooks/usePostContext";
 import { useState } from "react";
 
-function FormAddPost({ onAddPost }) {
+function FormAddPost() {
+	const { onAddPost } = usePostContext();
 	const [title, setTitle] = useState("");
 	const [body, setBody] = useState("");
 
@@ -29,7 +30,5 @@ function FormAddPost({ onAddPost }) {
 		</form>
 	);
 }
-FormAddPost.propTypes = {
-	onAddPost: PropTypes.func
-};
+
 export default FormAddPost;

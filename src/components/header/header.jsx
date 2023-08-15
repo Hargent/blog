@@ -1,28 +1,21 @@
-import PropTypes from "prop-types";
 import Results from "../results/results";
 import SearchPosts from "../search-post/search-post";
+import usePostContext from "../../hooks/usePostContext";
 
-function Header({ posts, onClearPosts, searchQuery, setSearchQuery }) {
+function Header() {
+	const { onClearPosts } = usePostContext();
 	return (
 		<header>
 			<h1>
 				<span>⚛️</span>The Atomic Blog
 			</h1>
 			<div>
-				<Results posts={posts} />
-				<SearchPosts
-					searchQuery={searchQuery}
-					setSearchQuery={setSearchQuery}
-				/>
+				<Results />
+				<SearchPosts />
 				<button onClick={onClearPosts}>Clear posts</button>
 			</div>
 		</header>
 	);
 }
-Header.propTypes = {
-	posts: PropTypes.array,
-	onClearPosts: PropTypes.func,
-	searchQuery: PropTypes.string,
-	setSearchQuery: PropTypes.func
-};
+
 export default Header;

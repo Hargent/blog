@@ -1,6 +1,7 @@
-import PropTypes from "prop-types";
+import useSearchContext from "../../hooks/useSearchContext";
 
-function SearchPosts({ searchQuery, setSearchQuery }) {
+function SearchPosts() {
+	const { searchQuery, setSearchQuery } = useSearchContext();
 	return (
 		<input
 			value={searchQuery}
@@ -9,8 +10,5 @@ function SearchPosts({ searchQuery, setSearchQuery }) {
 		/>
 	);
 }
-SearchPosts.propTypes = {
-	searchQuery: PropTypes.string,
-	setSearchQuery: PropTypes.func
-};
+
 export default SearchPosts;

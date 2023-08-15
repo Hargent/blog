@@ -1,9 +1,8 @@
-import PropTypes from "prop-types";
+import usePostContext from "../../hooks/usePostContext";
 
-function Results({ posts }) {
+function Results() {
+	const { posts } = usePostContext();
 	return <p>🚀 {posts.length} atomic posts found</p>;
 }
-Results.propTypes = {
-	posts: PropTypes.array
-};
+
 export default Results;

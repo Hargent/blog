@@ -1,6 +1,7 @@
-import PropTypes from "prop-types";
+import usePostContext from "../../hooks/usePostContext";
 
-function List({ posts }) {
+function List() {
+	const { posts } = usePostContext();
 	return (
 		<ul>
 			{posts.map((post, i) => (
@@ -12,7 +13,5 @@ function List({ posts }) {
 		</ul>
 	);
 }
-List.propTypes = {
-	posts: PropTypes.array
-};
+
 export default List;

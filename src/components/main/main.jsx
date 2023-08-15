@@ -1,17 +1,13 @@
 import FormAddPost from "../form-add-post/form-add-post";
 import Posts from "../post/post";
-import PropTypes from "prop-types";
 
-function Main({ posts, onAddPost }) {
+function Main() {
 	return (
 		<main>
-			<FormAddPost onAddPost={onAddPost} />
-			<Posts posts={posts} />
+			<FormAddPost />
+			<Posts />
 		</main>
 	);
 }
-Main.propTypes = {
-	posts: PropTypes.array,
-	onAddPost: PropTypes.func
-};
+
 export default Main;
